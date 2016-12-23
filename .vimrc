@@ -104,3 +104,6 @@ fun! Big5()
 	set fileencoding=big5
 endfun
 
+if exists('$TMUX')
+        set term=screen-256color
+endif
