@@ -1,4 +1,3 @@
-
 # Folder view configuration files
 .DS_Store
 Desktop.ini
@@ -9,3 +8,6 @@ Thumbs.db
 
 # Compiled Python files
 *.pyc
+
+# Compiled C++ files
+*.out
