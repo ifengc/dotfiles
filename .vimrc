@@ -16,7 +16,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'altercation/vim-colors-solarized'
-
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -53,10 +54,16 @@ filetype plugin indent on    " required
 " COLOR SCHEME
 " ===========================
 syntax enable
-
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
+
+
+" ===========================
+" VIM-AIRLINE SETTINGS
+" ===========================
+let g:airline_theme='molokai'
+set laststatus=2
 
 
 " ===========================
