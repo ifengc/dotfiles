@@ -1,7 +1,7 @@
 " ===========================
 " VUNDLE SETTINGS
 " ===========================
-set nocompatible              " be iMproved, required
+set nocompatible
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -18,6 +18,12 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'davidhalter/jedi-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -54,6 +60,10 @@ filetype plugin indent on    " required
 " COLOR SCHEME
 " ===========================
 syntax enable
+
+"set t_Co=256
+"set background=dark
+
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
@@ -64,6 +74,12 @@ let g:solarized_termcolors=256
 " ===========================
 let g:airline_theme='molokai'
 set laststatus=2
+
+
+" ===========================
+" GITGUTTER SETTINGS
+" ===========================
+let g:gitgutter_enabled = 0
 
 
 " ===========================
