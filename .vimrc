@@ -15,14 +15,15 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
 " Plugin 'Valloric/YouCompleteMe'
-" Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'airblade/vim-gitgutter'
+
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -60,14 +61,13 @@ filetype plugin indent on    " required
 " COLOR SCHEME
 " ===========================
 syntax enable
-
-"set t_Co=256
-"set background=dark
-
 set background=dark
+
+" colorscheme Tomorrow-Night
+" set t_Co=256
+
 colorscheme solarized
 let g:solarized_termcolors=256
-
 
 " ===========================
 " VIM-AIRLINE SETTINGS
@@ -85,9 +85,9 @@ let g:gitgutter_enabled = 0
 " ===========================
 " GENERAL SETTINGS
 " ===========================
-set so=7        " set 7 lines to the cursor for j/k 
+" set so=7        " set 7 lines to the cursor for j/k 
 set number	" enable line number
-set tabstop=8	" insert 4 spaces for a tab
+set tabstop=4	" insert 4 spaces for a tab
 set hlsearch	" highlight search
 set ruler	" display current position on status line
 set backspace=2	" allow backspace when insert on
@@ -95,12 +95,28 @@ set autoindent	" enable automatic indentation
 set expandtab	" replace <TAB> with space that indentation will look same even at other editor
 set smarttab    " insert tabs on the start of a line according to context
 
-
 autocmd FileType Makefile set noexpandtab
-autocmd FileType python,java,scala setlocal shiftwidth=4 tabstop=4
+autocmd FileType java,scala setlocal shiftwidth=4 tabstop=4
 autocmd FileType c,cpp,cc,h  set cindent
 
-" set cursorline	" highlight current line
+" PEP8 indentation
+let python_highlight_all = 1
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
+
+" Web development
+au BufNewFile,BufRead *.js,*.html,*.css set tabstop=2
+au BufNewFile,BufRead *.js,*.html,*.css set softtabstop=2
+au BufNewFile,BufRead *.js,*.html,*.css set shiftwidth=2
+au BufNewFile,BufRead *.js,*.html,*.css set expandtab
+au BufNewFile,BufRead *.js,*.html,*.css set autoindent
+
+set cursorline	" highlight current line
 
 " ===========================
 " ENCODING SETTINGS
