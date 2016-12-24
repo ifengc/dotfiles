@@ -143,6 +143,6 @@ fun! Big5()
 	set fileencoding=big5
 endfun
 
-if exists('$TMUX')
-        set term=screen-256color
-endif
+"if exists('$TMUX')
+"    set term=xterm-256color
+"endif
