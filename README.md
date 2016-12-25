@@ -10,5 +10,7 @@
 
 3. Launch `vim` and run `:PluginInstall`
 
-## .gitignore
+## .gitignore .gitconfig .tmux.conf
 1. `$ ln -sf ~/.dotfiles/.gitignore ~/.gitignore`
+2. `$ ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf`
+3. `$ cp ~/.dotfiles/.gitconfig ~/`
