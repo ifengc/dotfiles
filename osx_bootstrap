@@ -3,17 +3,11 @@
 echo "> Install homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo "› brew update"
-brew update
-
-echo "› brew bundle"
-cd homebrew & brew bundle
+echo "› brew update and install formula"
+brew update & brew bundle
 
 echo "> Install oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo "> Change login shell to zsh"
-chsh -s /usr/local/bin/zsh
 
 echo "> Install vim vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

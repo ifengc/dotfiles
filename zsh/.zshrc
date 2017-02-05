@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Scott/.oh-my-zsh
+export ZSH=/Users/$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -93,8 +93,7 @@ alias python=/usr/local/bin/python3
 alias python2=/usr/local/bin/python2
 alias pip=/usr/local/bin/pip3
 # alias vim=/usr/local/bin/vim
-# alias vim=/usr/local/Cellar/macvim/8.0-121/MacVim.app/Contents/MacOS/Vim
-alias vim=/usr/local/bin/mvin
+alias vim=/usr/local/Cellar/macvim/8.0-126/MacVim.app/Contents/MacOS/Vim
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias ll='ls -alFh'
 alias la='ls -Ah'
