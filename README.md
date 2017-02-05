@@ -4,7 +4,7 @@
 
 2. Inatall Xcode Command Line Tool `xcode-select --install`
 
-3. Clone dotfiles
+3. Clone dotfiles.  
 `git clone https://github.com/ifengc/dotfiles ~/.dotfiles`
 
 4. Run the script
@@ -20,9 +20,9 @@
     4. Install [Vundle](https://github.com/VundleVim/Vundle.vim)
     5. Link the dotfiles
 
-5. Change the login shell to zsh
-add /usr/local/bin/zsh to the last line of /etc/shells
+5. Change the login shell to zsh.  
+add /usr/local/bin/zsh to the last line of /etc/shells.  
 `chsh -s /usr/local/bin/zsh`
 
-5. Setup vim
+5. Setup vim.  
 Launch `vim` and run `:PluginInstall`
