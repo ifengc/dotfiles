@@ -1,16 +1,22 @@
 # dotfiles
-`$ git clone https://github.com/ifengc/dotfiles ~/.dotfiles`
 
+1. Install Xcode through AppStore
 
-## vimrc
-1. Set up [Vundle](https://github.com/VundleVim/Vundle.vim):
-`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+2. Inatall Xcode Command Line Tool `xcode-select --install`
 
-2. `$ ln -sf ~/.dotfiles/.vimrc ~/.vimrc`
+3. Run the script
 
-3. Launch `vim` and run `:PluginInstall`
+	```
+	chmod +x osx_bootstrap
+	./osx_bootstrap
+	```
+	The script will 
+    1. Install [Homebrew](http://brew.sh/index_zh-tw.html)
+    2. Update brew and install formula
+    3. Install [oh my zsh](http://ohmyz.sh/)
+    4. Install [Vundle](https://github.com/VundleVim/Vundle.vim)
+    5. Clones dotfiles
+    6. Link the dotfiles
 
-## .gitignore .gitconfig .tmux.conf
-1. `$ ln -sf ~/.dotfiles/.gitignore ~/.gitignore`
-2. `$ ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf`
-3. `$ cp ~/.dotfiles/.gitconfig ~/`
+4. Setup vim
+Launch `vim` and run `:PluginInstall`

@@ -1,0 +1,56 @@
+# OSX
+.DS_Store
+Desktop.ini
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.Trashes
+Icon
+
+# Dropbox settings and caches
+.dropbox
+.dropbox.attr
+.dropbox.cache
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Intellij
+.idea*
+
+# log file
+*.log
+
+# Compiled Python files
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Compiled C++ files
+*.out
+
+# Files generated from Java and Scala
+*.class
+*.jar
+*.war
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+

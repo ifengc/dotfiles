@@ -1,0 +1,8 @@
+brew 'git'
+brew 'htop'
+brew 'jq'
+brew 'macvim'
+brew 'scala'
+brew 'tmux'
+brew 'tree'
+brew 'wget'

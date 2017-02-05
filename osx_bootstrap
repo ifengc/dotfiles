@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+echo "> Install homebrew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "› brew update"
+brew update
+
+echo "› brew bundle"
+cd homebrew & brew bundle
+
+echo "> Install oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "> Change login shell to zsh"
+chsh -s /usr/local/bin/zsh
+
+echo "> Install vim vundle"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo "> Clone dotfiles from github"
+git clone https://github.com/ifengc/dotfiles ~/.dotfiles
+
+echo "> Link the dotfiles"
+cp ~/.dotfiles/git/.gitconfig ~/
+ln -sf ~/.dotfiles/git/.gitignore ~/.gitignore
+ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/vim/.vimrc ~/.vimrc
+ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc

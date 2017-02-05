@@ -18,13 +18,14 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'fisadev/vim-isort'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -83,11 +84,19 @@ let g:gitgutter_enabled = 0
 
 
 " ===========================
+" JEDI-VIM SETTINGS
+" ===========================
+let g:jedi#auto_initialization = 0
+
+
+" ===========================
 " GENERAL SETTINGS
 " ===========================
 " set so=7        " set 7 lines to the cursor for j/k 
 set number	" enable line number
 set tabstop=4	" insert 4 spaces for a tab
+set softtabstop=4
+set shiftwidth=4
 set hlsearch	" highlight search
 set ruler	" display current position on status line
 set backspace=2	" allow backspace when insert on
@@ -96,7 +105,6 @@ set expandtab	" replace <TAB> with space that indentation will look same even at
 set smarttab    " insert tabs on the start of a line according to context
 
 autocmd FileType Makefile set noexpandtab
-autocmd FileType java,scala setlocal shiftwidth=4 tabstop=4
 autocmd FileType c,cpp,cc,h  set cindent
 
 " PEP8 indentation
@@ -115,6 +123,21 @@ au BufNewFile,BufRead *.js,*.html,*.css set softtabstop=2
 au BufNewFile,BufRead *.js,*.html,*.css set shiftwidth=2
 au BufNewFile,BufRead *.js,*.html,*.css set expandtab
 au BufNewFile,BufRead *.js,*.html,*.css set autoindent
+
+
+au BufNewFile,BufRead *.xml set tabstop=2
+au BufNewFile,BufRead *.xml set softtabstop=2
+au BufNewFile,BufRead *.xml set shiftwidth=2
+au BufNewFile,BufRead *.xml set expandtab
+au BufNewFile,BufRead *.xml set autoindent
+
+
+au BufNewFile,BufRead *.java,*.scala set tabstop=2
+au BufNewFile,BufRead *.java,*.scala set softtabstop=2
+au BufNewFile,BufRead *.java,*.scala set shiftwidth=2
+au BufNewFile,BufRead *.java,*.scala set expandtab
+au BufNewFile,BufRead *.java,*.scala set autoindent
+
 
 set cursorline	" highlight current line
 

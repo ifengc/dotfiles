@@ -1,0 +1,6 @@
+
+[push]
+	default = simple
+
+[alias]
+    add-commit = !git add -A && git commit
