@@ -48,7 +48,7 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>731 479 796 473 0 0 1680 1027 </string>
+	<string>410 451 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>201 266 1034 732 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -623,7 +623,7 @@
 			<key>Normal Font</key>
 			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1281,6 +1281,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>1D16846E-B641-4185-91E5-0F0810C767E1</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>1</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>507994950.13893998</real>
 	<key>PointerActions</key>
