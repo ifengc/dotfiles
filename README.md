@@ -24,5 +24,5 @@
 add /usr/local/bin/zsh to the last line of /etc/shells.  
 `chsh -s /usr/local/bin/zsh`
 
-5. Setup vim.  
+6. Setup vim.  
 Launch `vim` and run `:PluginInstall`

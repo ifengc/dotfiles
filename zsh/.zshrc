@@ -87,11 +87,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-#
-alias python=/usr/local/bin/python3
-alias python2=/usr/local/bin/python2
-alias pip=/usr/local/bin/pip3
+
+# ===========================
+# user defined
+# ===========================
+# alias python=/usr/local/bin/python3
+# alias python2=/usr/local/bin/python2
+# alias pip=/usr/local/bin/pip3
 # alias vim=/usr/local/bin/vim
 alias vim=/usr/local/Cellar/macvim/8.0-126/MacVim.app/Contents/MacOS/Vim
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
@@ -99,15 +101,11 @@ alias ll='ls -alFh'
 alias la='ls -Ah'
 alias l='ls -CFh'
 
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 export SCALA_HOME="/usr/local/bin/scala"
-export PATH=$PATH:$SCALA_HOME/bin 
+export PATH=$PATH:$SCALA_HOME/bin
+export PATH=$HOME/miniconda3/bin:$PATH
 export AWS_DEFAULT_PROFILE=
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
-source /usr/local/bin/aws_zsh_completer.sh
-
-# virtualenv setting
-export VIRTUAL_ENV=~/.virtualenv/Envs
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
-source /usr/local/bin/virtualenvwrapper.sh
