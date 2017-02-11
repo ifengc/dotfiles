@@ -12,13 +12,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 echo "> Install vim vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-echo "> Clone dotfiles from github"
-git clone https://github.com/ifengc/dotfiles ~/.dotfiles
-
 echo "> Link the dotfiles"
 cp ~/.dotfiles/git/.gitconfig ~/
 ln -sf ~/.dotfiles/git/.gitignore ~/.gitignore
 ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/vim/.vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
