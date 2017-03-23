@@ -106,6 +106,6 @@ export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 export SCALA_HOME="/usr/local/bin/scala"
 export PATH=$PATH:$SCALA_HOME/bin
 export PATH=$HOME/miniconda3/bin:$PATH
-export AWS_DEFAULT_PROFILE=
+# export AWS_DEFAULT_PROFILE=
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
