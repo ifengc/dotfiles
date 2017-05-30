@@ -18,4 +18,5 @@ ln -sf ~/.dotfiles/git/.gitignore ~/.gitignore
 ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/vim/.vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/ifengc.zsh-theme ~/.oh-my-zsh/themes/ifengc.zsh-theme
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
