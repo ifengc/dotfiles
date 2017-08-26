@@ -26,3 +26,5 @@ add /usr/local/bin/zsh to the last line of /etc/shells.
 
 6. Setup vim.  
 Launch `vim` and run `:PluginInstall`
+    * Vim8 or NeoVim is needed for [ale](https://github.com/w0rp/ale)
+    * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)  need to be compiled.
