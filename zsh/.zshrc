@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias vim=/usr/local/bin/vim
 alias vim=/usr/local/Cellar/macvim/8.0-126/MacVim.app/Contents/MacOS/Vim
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
-alias ll='ls -alFh'
+alias ll='ls -lFh'
 alias la='ls -Ah'
 alias l='ls -CFh'
 
