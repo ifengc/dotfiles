@@ -152,6 +152,13 @@ au BufNewFile,BufRead *.java,*.scala set expandtab
 au BufNewFile,BufRead *.java,*.scala set autoindent
 
 
+au BufNewFile,BufRead *.yaml,*.yml set tabstop=2
+au BufNewFile,BufRead *.yaml,*.yml set softtabstop=2
+au BufNewFile,BufRead *.yaml,*.yml set shiftwidth=2
+au BufNewFile,BufRead *.yaml,*.yml set expandtab
+au BufNewFile,BufRead *.yaml,*.yml set autoindent
+
+
 set cursorline	" highlight current line
 
 " ===========================
