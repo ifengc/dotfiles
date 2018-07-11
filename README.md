@@ -1,5 +1,6 @@
 # dotfiles
 
+## For Mac OS
 1. Install Xcode through AppStore
 
 2. Inatall Xcode Command Line Tool `xcode-select --install`
@@ -28,3 +29,14 @@ add /usr/local/bin/zsh to the last line of /etc/shells.
 Launch `vim` and run `:PluginInstall`
     * Vim8 or NeoVim is needed for [ale](https://github.com/w0rp/ale)
     * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)  need to be compiled.
+
+## For Debian
+
+1. Install git and zsh.
+`sudo apt update && sudo apt install -y git zsh`
+
+2. Clone dotfiles.  
+`git clone https://github.com/ifengc/dotfiles ~/.dotfiles`
+
+3. Setup script
+`zsh linux-setup.sh`
