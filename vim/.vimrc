@@ -4,47 +4,33 @@
 set nocompatible
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'jiangmiao/auto-pairs'
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'nvie/vim-flake8'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'fisadev/vim-isort'
 Plugin 'motus/pig.vim'
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'w0rp/ale'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+" Plugin 'edkolev/tmuxline.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 
 " ===========================
@@ -52,9 +38,6 @@ filetype plugin indent on    " required
 " ===========================
 syntax enable
 set background=dark
-
-" colorscheme Tomorrow-Night
-" set t_Co=256
 
 colorscheme solarized
 let g:solarized_termcolors=256
@@ -74,7 +57,8 @@ vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 " ===========================
 " VIM-AIRLINE SETTINGS
 " ===========================
-let g:airline_theme='molokai'
+" let g:airline_theme='molokai'
+let g:airline_theme='onehalfdark'
 set laststatus=2
 
 
@@ -89,6 +73,7 @@ let g:ale_python_pylint_option="disable=C0301"
 let g:ale_linters = {
 \   'python': ['flake8'],
 \}
+
 
 " ===========================
 " GITGUTTER SETTINGS
@@ -105,7 +90,6 @@ let g:jedi#auto_initialization = 0
 " ===========================
 " GENERAL SETTINGS
 " ===========================
-" set so=7        " set 7 lines to the cursor for j/k 
 set number	" enable line number
 set tabstop=4	" insert 4 spaces for a tab
 set softtabstop=4
@@ -116,6 +100,7 @@ set backspace=2	" allow backspace when insert on
 set autoindent	" enable automatic indentation
 set expandtab	" replace <TAB> with space that indentation will look same even at other editor
 set smarttab    " insert tabs on the start of a line according to context
+set cursorline	" highlight current line
 
 autocmd FileType Makefile set noexpandtab
 autocmd FileType c,cpp,cc,h  set cindent
@@ -137,13 +122,11 @@ au BufNewFile,BufRead *.js,*.html,*.css set shiftwidth=2
 au BufNewFile,BufRead *.js,*.html,*.css set expandtab
 au BufNewFile,BufRead *.js,*.html,*.css set autoindent
 
-
 au BufNewFile,BufRead *.xml set tabstop=2
 au BufNewFile,BufRead *.xml set softtabstop=2
 au BufNewFile,BufRead *.xml set shiftwidth=2
 au BufNewFile,BufRead *.xml set expandtab
 au BufNewFile,BufRead *.xml set autoindent
-
 
 au BufNewFile,BufRead *.java,*.scala set tabstop=2
 au BufNewFile,BufRead *.java,*.scala set softtabstop=2
@@ -151,15 +134,12 @@ au BufNewFile,BufRead *.java,*.scala set shiftwidth=2
 au BufNewFile,BufRead *.java,*.scala set expandtab
 au BufNewFile,BufRead *.java,*.scala set autoindent
 
-
 au BufNewFile,BufRead *.yaml,*.yml set tabstop=2
 au BufNewFile,BufRead *.yaml,*.yml set softtabstop=2
 au BufNewFile,BufRead *.yaml,*.yml set shiftwidth=2
 au BufNewFile,BufRead *.yaml,*.yml set expandtab
 au BufNewFile,BufRead *.yaml,*.yml set autoindent
 
-
-set cursorline	" highlight current line
 
 " ===========================
 " ENCODING SETTINGS
