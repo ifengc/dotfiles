@@ -1,0 +1,31 @@
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-autosuggestions"
+zplug "sorin-ionescu/prezto"
+
+zplug "modules/syntax-highlighting", from:prezto
+zplug "modules/history-substring-search", from:prezto
+zplug "modules/history", from:prezto
+zplug "modules/completion", from:prezto
+zplug "modules/git", from:prezto
+zplug "modules/prompt", from:prezto
+zstyle ':prezto:module:prompt' theme 'sorin'
+
+if ! zplug check --verbose; then
+    echo; zplug install
+fi
+
+zplug load
+
+alias ls='ls --color=auto'
+alias ll='ls -ahlF'
+alias la='ls -A'
+alias rm='rm -i'
+alias tmux='tmux -2'
+
+export PATH="${HOME}/miniconda3/bin:/usr/sbin:$PATH"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+bindkey "^p" history-beginning-search-backward
+bindkey "^n" history-beginning-search-forward
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
