@@ -1,6 +1,13 @@
-
 [push]
 	default = simple
-
 [alias]
     add-commit = !git add -A && git commit
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[user]
+	name = ifengc
+	email = iamifengc@gmail.com
+[credential]
+	helper = osxkeychain
