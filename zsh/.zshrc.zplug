@@ -1,9 +1,9 @@
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-zsh-syntax-highlighting"
 zplug "sorin-ionescu/prezto"
 
-zplug "modules/syntax-highlighting", from:prezto
 zplug "modules/history-substring-search", from:prezto
 zplug "modules/history", from:prezto
 zplug "modules/completion", from:prezto
