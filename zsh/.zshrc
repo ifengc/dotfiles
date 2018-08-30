@@ -1,43 +1,34 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+source ~/.zplug/init.zsh
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+zplug "sorin-ionescu/prezto"
+zplug "modules/history-substring-search", from:prezto
+zplug "modules/history", from:prezto
+zplug "modules/completion", from:prezto
+zplug "modules/git", from:prezto
+zplug "modules/prompt", from:prezto
+zstyle ':prezto:module:prompt' theme 'sorin'
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ifengc"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
 
-plugins=(git)
-plugins=(redis-cli)
-# plugins=(zsh-syntax-highlighting)
-plugins=(zsh-autosuggestions)
-# plugins=(zsh-apple-touchbar)
-# plugins=(history-substring-search)
-# plugins=(zsh-completions)
+if ! zplug check --verbose; then
+    echo; zplug install
+fi
 
-source $ZSH/oh-my-zsh.sh
+zplug load
 
+export LS_COLORS="di=1;35:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=30;46:tw=0;42:ow=30;43"
+alias ls='ls --color=auto'
+alias ll='ls -ahlF'
+alias la='ls -A'
+alias rm='rm -i'
+alias tmux='tmux -2'
 
-# ===========================
-# user defined
-# ===========================
-alias vim=/usr/local/Cellar/macvim/8.0-142/MacVim.app/Contents/MacOS/Vim
-alias cppcompile='c++ -std=c++11 -stdlib=libc++'
-alias ll='ls -lFh'
-alias la='ls -Ah'
-alias l='ls -CFh'
-
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
-export SCALA_HOME="/usr/local/bin/scala"
-export PATH=$PATH:$SCALA_HOME/bin
-export PATH=$HOME/miniconda3/bin:$PATH
-export AWS_DEFAULT_PROFILE=
-export LC_ALL=en_US.UTF-8  
-export LANG=en_US.UTF-8
+export PATH="${HOME}/miniconda3/bin:/usr/sbin:$PATH"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 bindkey "^p" history-beginning-search-backward
 bindkey "^n" history-beginning-search-forward
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export PYSPARK_PYTHON=python3
+export PYSPARK_SUBMIT_ARGS="--packages org.apache.hadoop:hadoop-aws:2.7.3 pyspark-shell"

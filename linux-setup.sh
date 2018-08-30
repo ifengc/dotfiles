@@ -1,14 +1,14 @@
 echo "> apt update and install basic packages"
 sudo apt update
-sudo apt install -y zsh git openjdk-8-jre build-essential cmake jq pv htop tmux tree vim-nox colordiff
+sudo apt install -y zsh git openjdk-8-jre build-essential cmake jq pv htop tmux tree vim-nox colordiff python-dev python3-dev
 
 echo "> Link the dotfiles"
-ln -sf ~/.dotfiles/git/.gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/git/.gitignore ~/.gitignore
-ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/vim/.vimrc ~/.vimrc
-ln -sf ~/.dotfiles/bash/.bash_profile ~/.bash_profile
-ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
+cp ~/.dotfiles/git/.gitconfig ~/.gitconfig
+cp ~/.dotfiles/git/.gitignore ~/.gitignore
+cp ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+cp ~/.dotfiles/vim/.vimrc ~/.vimrc
+cp ~/.dotfiles/bash/.bash_profile ~/.bash_profile
+cp ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
 echo "> Install zplug and set zsh as default shell"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

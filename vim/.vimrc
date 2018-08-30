@@ -39,8 +39,8 @@ filetype plugin indent on    " required
 syntax enable
 set background=dark
 
-colorscheme solarized
-let g:solarized_termcolors=256
+" colorscheme solarized
+" let g:solarized_termcolors=256
 
 
 " ===========================
@@ -71,7 +71,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_python_flake8_args="--ignore=E501"
 let g:ale_python_pylint_option="disable=C0301"
 let g:ale_linters = {
-\   'python': ['flake8'],
+\   'python': ['pylint', 'flake8'],
 \}
 
 
