@@ -1,22 +1,28 @@
 if [ "$(uname)" = "Darwin" ]; then
-    echo "> install homebrew"
+    echo "> Install homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     echo "> brew update and install basic packages"
     brew update
-    brew install -y zsh git cmake jq pv htop tmux tree colordiff
+    brew install -y zsh wget git cmake jq pv htop tmux tree colordiff tnftp scala
+
+    echo "> Copy zshrc for osx"
+    cp ~/.dotfiles/zsh/.zshrc_osx ~/.zshrc
+
 elif [ "$(uname)" = "Linux" ]; then
     echo "> apt update and install basic packages"
     sudo apt update
     sudo apt install -y zsh git openjdk-8-jre build-essential cmake jq pv htop tmux tree vim-nox colordiff python-dev python3-dev
+
+    echo "> Copy zshrc for linux"
+    cp ~/.dotfiles/zsh/.zshrc_linux ~/.zshrc
 fi
 
-echo "> Link the dotfiles"
+echo "> Copy other dotfiles"
 cp ~/.dotfiles/git/.gitconfig ~/.gitconfig
 cp ~/.dotfiles/git/.gitignore ~/.gitignore
 cp ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 cp ~/.dotfiles/vim/.vimrc ~/.vimrc
 cp ~/.dotfiles/bash/.bash_profile ~/.bash_profile
-cp ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
 echo "> Install zplug and set zsh as default shell"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
