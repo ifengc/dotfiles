@@ -1,6 +1,14 @@
-echo "> apt update and install basic packages"
-sudo apt update
-sudo apt install -y zsh git openjdk-8-jre build-essential cmake jq pv htop tmux tree vim-nox colordiff python-dev python3-dev
+if [ "$(uname)" = "Darwin" ]; then
+    echo "> install homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "> brew update and install basic packages"
+    brew update
+    brew install -y zsh git cmake jq pv htop tmux tree colordiff
+elif [ "$(uname)" = "Linux" ]; then
+    echo "> apt update and install basic packages"
+    sudo apt update
+    sudo apt install -y zsh git openjdk-8-jre build-essential cmake jq pv htop tmux tree vim-nox colordiff python-dev python3-dev
+fi
 
 echo "> Link the dotfiles"
 cp ~/.dotfiles/git/.gitconfig ~/.gitconfig
@@ -17,6 +25,7 @@ source .zshrc
 echo "> Install miniconda"
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b
+rm Miniconda3-latest-Linux-x86_64.sh -b
 
 echo "> Install vim vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

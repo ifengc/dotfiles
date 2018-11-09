@@ -39,4 +39,4 @@ Launch `vim` and run `:PluginInstall`
 `git clone https://github.com/ifengc/dotfiles ~/.dotfiles`
 
 3. Setup script
-`zsh linux-setup.sh`
+`cd .dotfiles && zsh setup.sh`
