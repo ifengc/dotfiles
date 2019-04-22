@@ -68,7 +68,8 @@ set laststatus=2
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_python_flake8_args="--ignore=E501"
+let g:ale_python_flake8_args="--ignore=E501,W503"
+let g:ale_python_flake8_options="--ignore=E501,W503"
 let g:ale_python_pylint_option="disable=C0301"
 let g:ale_linters = {
 \   'python': ['pylint', 'flake8'],
