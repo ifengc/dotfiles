@@ -91,17 +91,21 @@ let g:jedi#auto_initialization = 0
 " ===========================
 " GENERAL SETTINGS
 " ===========================
-set number	" enable line number
-set tabstop=4	" insert 4 spaces for a tab
-set softtabstop=4
-set shiftwidth=4
-set hlsearch	" highlight search
-set ruler	" display current position on status line
-set backspace=2	" allow backspace when insert on
-set autoindent	" enable automatic indentation
-set expandtab	" replace <TAB> with space that indentation will look same even at other editor
-set smarttab    " insert tabs on the start of a line according to context
-set cursorline	" highlight current line
+set relativenumber      " show relative line numbers
+set tabstop=4	        " number of visual spaces per TAB
+set softtabstop=4       " number of spaces in tab when editing
+set expandtab	        " replace <TAB> with space that indentation will look same even at other editor
+set shiftwidth=4        " autoindent tab width
+set hlsearch	        " highlight search
+set incsearch           " search as characters are entered
+set ruler	            " display current position on status line
+set backspace=2	        " allow backspace when insert on
+set autoindent	        " enable automatic indentation
+set smarttab            " insert tabs on the start of a line according to context
+set cursorline	        " highlight current line
+set undofile            " undo previous actions even after reopening a file
+set visualbell          " replace bell with screen flash
+" set number	            " show line numbers
 
 autocmd FileType Makefile set noexpandtab
 autocmd FileType c,cpp,cc,h  set cindent
@@ -169,4 +173,4 @@ endfun
 
 "if exists('$TMUX')
 "    set term=xterm-256color
-"endif
+"endiif
