@@ -3,11 +3,13 @@ if [ "$(uname)" = "Darwin" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     echo "> brew update and install basic packages"
     brew update
-    brew install -y zsh git cmake jq pv htop tmux tree colordiff
+    brew install -y zsh git cmake jq pv htop tmux tree colordiff glances python3 fzf
 elif [ "$(uname)" = "Linux" ]; then
     echo "> apt update and install basic packages"
     sudo apt update
     sudo apt install -y zsh git openjdk-8-jre build-essential cmake jq pv htop tmux tree vim-nox colordiff python-dev python3-dev
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    cd && ~/.fzf/install
 fi
 
 echo "> Link the dotfiles"
@@ -33,4 +35,10 @@ vim +PluginInstall +qall
 
 echo "> Compiling YCM"
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
+if [ "$(uname)" = "Darwin" ]; then
+    echo "> Install from homebrew python3"
+    /usr/local/bin/python3 install.py --clang-completer
+elif [ "$(uname)" = "Linux" ]; then
+    echo "> Install from conda python"
+    ./install.py --clang-completer
+fi
