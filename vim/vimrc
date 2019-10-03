@@ -103,7 +103,7 @@ set backspace=2	        " allow backspace when insert on
 set autoindent	        " enable automatic indentation
 set smarttab            " insert tabs on the start of a line according to context
 set cursorline	        " highlight current line
-set undofile            " undo previous actions even after reopening a file
+" set undofile            " undo previous actions even after reopening a file
 set visualbell          " replace bell with screen flash
 " set number	            " show line numbers
 
