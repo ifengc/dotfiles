@@ -5,37 +5,47 @@
 
 2. Inatall Xcode Command Line Tool `xcode-select --install`
 
-3. Clone dotfiles.  
+3. Clone dotfiles. 
 `git clone https://github.com/ifengc/dotfiles ~/.dotfiles`
 
 4. Run the script
 
-	```
-	chmod +x osx_bootstrap
-	./osx_bootstrap
-	```
-	The script will 
-    1. Install [Homebrew](http://brew.sh/index_zh-tw.html)
+  ```
+  cd .dotfiles
+  chmod +x setup.sh
+  ./setup.sh
+  ```
+  The script will 
+    1. Install [Homebrew](https://brew.sh) and [zplug](https://github.com/zplug/zplug)
     2. Update brew and install formula
-    3. Install [oh my zsh](http://ohmyz.sh/)
-    4. Install [Vundle](https://github.com/VundleVim/Vundle.vim)
-    5. Link the dotfiles
+    3. Copy the dotfiles
+    4. Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+    5. Install [Vim Vundle](https://github.com/VundleVim/Vundle.vim)
+    6. Compile [YCM](https://github.com/ycm-core/YouCompleteMe)
 
-5. Change the login shell to zsh.  
-add /usr/local/bin/zsh to the last line of /etc/shells.  
-`chsh -s /usr/local/bin/zsh`
+5. Other sotfware and setting
+    * MacOS
+        - Add an iCloud account and sync Calendar, Find my Mac, Contacts etc.
+        - Add battery show percentage symbols
+        - Adjust Dock size and pop up
+        - Check all Trackpad option and Three fingers drop in Accessibility -> Mouse & Trackpad -> Trackpad Options
+        - Adjust keyboard and trackpad speed
+    * Software
+        - Install Alfred, set the hotkey to `Ctrl Space` and disable default Spotlight hotkey in Keyboard -> Shortcuts -> Spotlight
+        - Install VS Code and Open the Command Palette (Shift + Cmd + P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+        - Install Docker
+        - Install Typora
+        - Config git
+            - `git config --global core.excludesfile '~/.gitignore'`
+        - Setup ssh key
 
-6. Setup vim.  
-Launch `vim` and run `:PluginInstall`
-    * Vim8 or NeoVim is needed for [ale](https://github.com/w0rp/ale)
-    * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)  need to be compiled.
 
 ## For Debian
 
 1. Install git and zsh.
 `sudo apt update && sudo apt install -y git zsh`
 
-2. Clone dotfiles.  
+2. Clone dotfiles. 
 `git clone https://github.com/ifengc/dotfiles ~/.dotfiles`
 
 3. Setup script
