@@ -16,10 +16,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'nvie/vim-flake8'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'fisadev/vim-isort'
+" Plugin 'fisadev/vim-isort'
 Plugin 'motus/pig.vim'
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'junegunn/vim-easy-align'
@@ -39,8 +39,8 @@ filetype plugin indent on    " required
 syntax enable
 set background=dark
 
-" colorscheme solarized
-" let g:solarized_termcolors=256
+colorscheme solarized
+let g:solarized_termcolors=256
 
 
 " ===========================
@@ -67,13 +67,17 @@ set laststatus=2
 " ===========================
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_python_flake8_args="--ignore=E501,W503"
-let g:ale_python_flake8_options="--ignore=E501,W503"
-let g:ale_python_pylint_option="disable=C0301"
+let g:ale_echo_msg_info_str = 'I'
+let g:ale_echo_msg_format = '[%linter%][%code%] %s [%severity%]'
+let g:ale_python_flake8_options="--ignore=E501,W503,E203 --max-line-length=90"
+let g:ale_python_mypy_options="--ignore-missing-imports"
+let g:ale_python_isort_options="--multi-line 5 --line-length 90"
+let g:ale_python_pylint_use_msg_id=1
+let g:ale_python_black_options="--line-length 90"
 let g:ale_linters = {
-\   'python': ['pylint', 'flake8'],
+\   'python': ['pylint', 'flake8', 'mypy'],
 \}
+let g:ale_fixers = ['black', 'isort']  " FIFO
 
 
 " ===========================
@@ -91,7 +95,7 @@ let g:jedi#auto_initialization = 0
 " ===========================
 " GENERAL SETTINGS
 " ===========================
-set relativenumber      " show relative line numbers
+" set relativenumber      " show relative line numbers
 set tabstop=4	        " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 set expandtab	        " replace <TAB> with space that indentation will look same even at other editor
@@ -105,7 +109,7 @@ set smarttab            " insert tabs on the start of a line according to contex
 set cursorline	        " highlight current line
 " set undofile            " undo previous actions even after reopening a file
 set visualbell          " replace bell with screen flash
-" set number	            " show line numbers
+set number	            " show line numbers
 
 autocmd FileType Makefile set noexpandtab
 autocmd FileType c,cpp,cc,h  set cindent

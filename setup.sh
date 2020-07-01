@@ -22,6 +22,7 @@ cp ~/.dotfiles/git/gitignore ~/.gitignore
 cp ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 cp ~/.dotfiles/vim/vimrc ~/.vimrc
 cp ~/.dotfiles/bash/bash_profile ~/.bash_profile
+cp ~/.dotfiles/pylint/pylintrc ~/.pylintrc
 
 echo "> Install miniconda"
 if [ "$(uname)" = "Darwin" ]; then
