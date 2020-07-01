@@ -11,3 +11,5 @@
 	email = iamifengc@gmail.com
 [credential]
 	helper = osxkeychain
+[core]
+    editor = vim
