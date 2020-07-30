@@ -71,7 +71,7 @@ let g:ale_echo_msg_info_str = 'I'
 let g:ale_echo_msg_format = '[%linter%][%code%] %s [%severity%]'
 let g:ale_python_flake8_options="--ignore=E501,W503,E203 --max-line-length=90"
 let g:ale_python_mypy_options="--ignore-missing-imports"
-let g:ale_python_isort_options="--multi-line 5 --line-length 90"
+let g:ale_python_isort_options="--multi-line 5 --line-width 90 --balanced"
 let g:ale_python_pylint_use_msg_id=1
 let g:ale_python_black_options="--line-length 90"
 let g:ale_linters = {
