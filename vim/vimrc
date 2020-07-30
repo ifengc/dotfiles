@@ -110,6 +110,7 @@ set cursorline	        " highlight current line
 " set undofile            " undo previous actions even after reopening a file
 set visualbell          " replace bell with screen flash
 set number	            " show line numbers
+set viminfo='100,<1000,s100,h
 
 nmap <tab> V>
 vmap <tab> >gv
