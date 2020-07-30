@@ -111,6 +111,11 @@ set cursorline	        " highlight current line
 set visualbell          " replace bell with screen flash
 set number	            " show line numbers
 
+nmap <tab> V>
+vmap <tab> >gv
+nmap <s-tab> V<
+vmap <s-tab> <gv
+
 autocmd FileType Makefile set noexpandtab
 autocmd FileType c,cpp,cc,h  set cindent
 
