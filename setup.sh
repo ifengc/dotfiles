@@ -3,7 +3,13 @@ if [ "$(uname)" = "Darwin" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     echo "> brew update and install basic packages"
     brew update
-    brew install zsh wget git cmake jq pv htop tmux tree colordiff glances python python3 fzf zplug macvim
+    brew install zsh wget git cmake jq pv htop tmux tree colordiff glances python python3 fzf zplug macvim fd
+    echo "> Install openjdk via homebrew"
+    brew tap AdoptOpenJDK/openjdk
+    brew cask install adoptopenjdk11
+    echo "> Install Nerd Fonts via homebrew"
+    brew tap homebrew/cask-fonts
+    brew cask install font-hack-nerd-font
     echo "> Copy zshrc for osx"
     cp ~/.dotfiles/zsh/zshrc_osx ~/.zshrc
 elif [ "$(uname)" = "Linux" ]; then

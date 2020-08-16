@@ -33,6 +33,13 @@
     * Software
         - Install Alfred, set the hotkey to `Ctrl Space` and disable default Spotlight hotkey in Keyboard -> Shortcuts -> Spotlight
         - Install VS Code and Open the Command Palette (Shift + Cmd + P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+        - Install iTerm2
+            - In Appearance -> Dimming: Modify `Dimming amount`
+            - In Profile -> Colors: Use Solarized Dark as color preset, change Background and ANSI Bright to black
+            - In Profile -> Keys: Change `Left option` and `Right option` to `ESC+`
+            - In Profile -> Terminal: Check `Unlimited scrollback`
+            - In Profile -> Text: Check `Use a different font for non-ASCII text` and select `Hack Nerd Font`
+            - In Keys: Add `ctrl-cmd-f` -> `Toggle Fullscreen` mapping
         - Install Docker
         - Install Typora
         - Config git
