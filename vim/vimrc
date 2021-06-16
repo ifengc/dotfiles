@@ -9,7 +9,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -19,13 +18,20 @@ Plugin 'Valloric/YouCompleteMe'
 " Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
-" Plugin 'fisadev/vim-isort'
-Plugin 'motus/pig.vim'
+" Plugin 'motus/pig.vim'
 " Plugin 'vim-syntastic/syntastic'
-Plugin 'junegunn/vim-easy-align'
+" Plugin 'junegunn/vim-easy-align'
 Plugin 'w0rp/ale'
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-" Plugin 'edkolev/tmuxline.vim'
+" Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" Plugin 'jiangmiao/auto-pairs'
+" Plugin 'zivyangll/git-blame.vim'
+Plugin 'sheerun/vim-polyglot'
+" Plugin 'neoclide/coc.nvim'
+Plugin 'fisadev/vim-isort'
+Plugin 'joereynolds/sql-lint'
 
 
 " All of your Plugins must be added before the following line
@@ -42,7 +48,6 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 
-
 " ===========================
 " VIM-EasyAlign SETTINGS
 " ===========================
@@ -57,8 +62,8 @@ vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 " ===========================
 " VIM-AIRLINE SETTINGS
 " ===========================
-" let g:airline_theme='molokai'
-let g:airline_theme='onehalfdark'
+let g:airline_theme='molokai'
+" let g:airline_theme='murmur'
 set laststatus=2
 
 
@@ -69,16 +74,17 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_info_str = 'I'
 let g:ale_echo_msg_format = '[%linter%][%code%] %s [%severity%]'
-let g:ale_python_flake8_options="--ignore=E501,W503,E203 --max-line-length=90"
+let g:ale_python_flake8_options="--ignore=E501,W503,E203 --max-line-length=99"
 let g:ale_python_mypy_options="--ignore-missing-imports"
-let g:ale_python_isort_options="--multi-line 5 --line-width 90 --balanced"
+let g:ale_python_isort_options="--multi-line 5 --line-width 99 --balanced"
 let g:ale_python_pylint_use_msg_id=1
-let g:ale_python_black_options="--line-length 90"
+let g:ale_python_black_options="--line-length 99"
 let g:ale_linters = {
-\   'python': ['pylint', 'flake8', 'mypy'],
+\   'python': ['pylint', 'mypy'],
+\   'sql': ['sqlint', 'sql-lint'],
 \}
-let g:ale_fixers = ['black', 'isort']  " FIFO
-
+let g:ale_fixers = ['black']
+nnoremap <silent> <C-b> :ALEFix<CR>
 
 " ===========================
 " GITGUTTER SETTINGS
@@ -90,7 +96,27 @@ let g:gitgutter_enabled = 0
 " JEDI-VIM SETTINGS
 " ===========================
 let g:jedi#auto_initialization = 0
+" let g:jedi#goto_command = "<leader>d
+" let g:jedi#goto_assignments_command = "<leader>g
 
+
+" ===========================
+" git-blame.vim SETTINGS
+" ===========================
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
+
+" ===========================
+" vim-isort SETTINGS
+" ===========================
+let g:vim_isort_map = ''
+
+
+" ===========================
+" fzf SETTINGS
+" ===========================
+nnoremap <silent> <C-t> :Files<CR>
+nnoremap <silent> <C-g> :Rg<CR>
 
 " ===========================
 " GENERAL SETTINGS
@@ -111,6 +137,7 @@ set cursorline	        " highlight current line
 set visualbell          " replace bell with screen flash
 set number	            " show line numbers
 set viminfo='100,<1000,s100,h
+set clipboard=unnamed   " Operations such as yy, D, and P work with the system clipboard in macvim
 
 nmap <tab> V>
 vmap <tab> >gv
@@ -154,6 +181,12 @@ au BufNewFile,BufRead *.yaml,*.yml set softtabstop=2
 au BufNewFile,BufRead *.yaml,*.yml set shiftwidth=2
 au BufNewFile,BufRead *.yaml,*.yml set expandtab
 au BufNewFile,BufRead *.yaml,*.yml set autoindent
+
+au BufNewFile,BufRead *.sql set tabstop=2
+au BufNewFile,BufRead *.sql set softtabstop=2
+au BufNewFile,BufRead *.sql set shiftwidth=2
+au BufNewFile,BufRead *.sql set expandtab
+au BufNewFile,BufRead *.sql set autoindent
 
 
 " ===========================
